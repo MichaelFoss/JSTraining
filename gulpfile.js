@@ -1,6 +1,7 @@
 const gulp = require('./.gulp')([
-    'gt-uglify'
+    'gt-uglify',
+    'gt-sass'
 ]);
 
 
-gulp.task('default', ['gt-uglify']);
+gulp.task('default', ['gt-sass', 'gt-uglify']);
