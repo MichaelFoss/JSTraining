@@ -9,5 +9,5 @@ module.exports = () => {
         .pipe(concat('main.js'))
         .pipe(uglify())
         .pipe(srcMaps.write('./'))
-        .pipe(gulp.dest('./public/js'));
+        .pipe(gulp.dest('./www/js'));
 }
