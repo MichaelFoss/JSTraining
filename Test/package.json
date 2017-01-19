@@ -4,16 +4,22 @@
   "description": "Test project",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "gulp && node app/server"
   },
   "author": "Michael Foss <michael@mikefoss.com> (https://github.com/MichaelFoss/)",
   "license": "WTFPL",
   "devDependencies": {
-    "gulp": "^3.9.1",
+    "browser-sync": "^2.18.6",
+    "gulp": "^4",
     "gulp-concat": "^2.6.1",
+    "gulp-nodemon": "^2.2.1",
     "gulp-sass": "^3.1.0",
     "gulp-sourcemaps": "^2.4.0",
-    "gulp-uglify": "^2.0.0"
+    "gulp-uglify": "^2.0.0",
+    "gulp-watch": "^4.3.11",
+    "nodemon": "^1.11.0",
+    "run-sequence": "^1.2.2"
   },
   "dependencies": {
     "express": "^4.14.0",
