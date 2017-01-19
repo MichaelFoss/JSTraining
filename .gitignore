@@ -1,3 +1,7 @@
+# Compiled files
+**/www/css
+**/www/js
+
 # Webstorm
 .idea
 

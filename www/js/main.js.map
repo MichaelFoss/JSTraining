@@ -1,1 +1,0 @@
-{"version":3,"sources":["js/test.js","js/index.js"],"names":["sayHi","debug","log","console","alphabet"],"mappings":"AAAA,QAAAA,SACAC,MAAAC,IAAA,eCDAC,QAAAD,IAAA,MDIAF,OAEA,IAAAI,UAAA","file":"main.js","sourcesContent":["function sayHi() {\n    debug.log('hello world');\n}\n\nsayHi();\n\nvar alphabet = 'abcdefg';","console.log('hi');"]}
