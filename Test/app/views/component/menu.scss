@@ -1,0 +1,12 @@
+@import 'app/src/sass/mixin.scss';
+
+nav {
+  ul {
+    list-style-type: none;
+    @include zeroed();
+    li {
+      @include zeroed();
+      display: inline-block;
+    }
+  }
+}

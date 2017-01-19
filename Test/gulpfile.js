@@ -1,7 +1,24 @@
 const gulp = require('./.gulp')([
     'gt-uglify',
-    'gt-sass'
+    'gt-sass',
+    'gt-watch',
+    'gt-browserSync',
+    'gt-nodemon'
 ]);
 
+const runSequence = require('run-sequence');
 
-gulp.task('default', ['gt-sass', 'gt-uglify']);
+gulp.task('develop', ['gt-sass', 'gt-uglify'], () => {
+    // Start server
+    // @TODO
+    // Do other stuff
+    runSequence(
+        'gt-nodemon',
+        ['gt-browserSync', 'gt-watch']
+    );
+});
+gulp.task('default', () => {
+    runSequence(
+        ['gt-sass', 'gt-uglify']
+    );
+});
