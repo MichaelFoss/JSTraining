@@ -1,12 +1,46 @@
 @import 'app/src/sass/mixin.scss';
+$menuBackgroundColor: #CCC;
+$menuItemHighlighted: #EEE;
 
 nav {
+  font: 10px Helvetica, Verdana;
   ul {
     list-style-type: none;
+    background-color: $menuBackgroundColor;
     @include zeroed();
+    border: 1px solid black;
     li {
-      @include zeroed();
+      position: relative;
+      cursor: default;
+      margin: 0;
       display: inline-block;
+      padding: 4px 8px;
+      border: solid black;
+      border-width: 0 1px 0 0;
+      white-space: nowrap;
+      ul {
+        display: none;
+        position: absolute;
+        background-color: $menuBackgroundColor;
+        @include zeroed();
+        top: 20;
+        left: -1;
+        border: solid black;
+        border-width: 1px 1px 0;
+        li {
+          border-width: 0 0 1px;
+          margin: 0px;
+          padding: 4px 8px;
+          cursor: pointer;
+          display: block;
+        }
+      }
     }
+    li:hover {
+      background-color: $menuItemHighlighted;
+      ul {
+        display: inline-block;
+      }
+	}
   }
 }
