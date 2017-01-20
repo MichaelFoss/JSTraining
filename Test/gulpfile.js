@@ -1,6 +1,7 @@
 const gulp = require('./.gulp')([
     'gt-uglify',
     'gt-sass',
+    'gt-pug',
     'gt-watch',
     'gt-browserSync',
     'gt-nodemon'
