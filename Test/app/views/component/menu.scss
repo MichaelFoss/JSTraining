@@ -23,24 +23,25 @@ nav {
         position: absolute;
         background-color: $menuBackgroundColor;
         @include zeroed();
-        top: 20;
+        top: 19;
         left: -1;
         border: solid black;
         border-width: 1px 1px 0;
         li {
           border-width: 0 0 1px;
-          margin: 0px;
+        }
+        li:hover {
+          background-color: $menuItemHighlighted;
+          ul {
+            display: inline-block;
+          }
+        }
+      }
+    }
+
+    margin: 0px;
           padding: 4px 8px;
           cursor: pointer;
           display: block;
         }
       }
-    }
-    li:hover {
-      background-color: $menuItemHighlighted;
-      ul {
-        display: inline-block;
-      }
-	}
-  }
-}
