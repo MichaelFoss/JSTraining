@@ -1,4 +1,5 @@
 @import 'app/src/sass/mixin.scss';
+
 $menuBackgroundColor: #CCC;
 $menuItemHighlighted: #EEE;
 
@@ -40,8 +41,8 @@ nav {
     }
 
     margin: 0px;
-          padding: 4px 8px;
-          cursor: pointer;
-          display: block;
-        }
-      }
+    padding: 4px 8px;
+    cursor: pointer;
+    display: block;
+  }
+}
