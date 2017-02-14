@@ -22,17 +22,19 @@ const HEROES: Hero[] = [
   selector: 'my-app',
   template: `
     <h1>{{title}}</h1>
-    <h2>{{currentHero.name}} Details</h2>
-    <div>
-      <label>id: </label>{{currentHero.id}}
-    </div>
-    <div>
-      <label>name: </label>
-      <input type="text" [(ngModel)]="currentHero.name" placeholder="Name" />
+    <div *ngIf="currentHero">
+      <h2>{{currentHero.name}} Details</h2>
+      <div>
+        <label>id: </label>{{currentHero.id}}
+      </div>
+      <div>
+        <label>name: </label>
+        <input type="text" [(ngModel)]="currentHero.name" placeholder="Name" />
+      </div>
     </div>
     <h2>My Heroes</h2>
     <ul class="heroes">
-      <li *ngFor="let hero of heroes">
+      <li *ngFor="let hero of heroes" (click)="onSelect(hero)">
         <span class="badge">{{hero.id}}</span> {{hero.name}}
       </li>
     </ul>
@@ -93,4 +95,7 @@ export class AppComponent  {
   title = 'Tour Of Heroes';
   heroes = HEROES;
   currentHero: Hero;
+  onSelect(hero: Hero): void {
+    this.currentHero = hero;
+  }
 }
