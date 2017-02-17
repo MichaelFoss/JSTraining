@@ -10,6 +10,7 @@ const MOCK_LOAD_DELAY = 3000;
   template: `
     <h1>{{title}}</h1>
     <h2>My Heroes</h2>
+    <div *ngIf="!heroes">Loading Hero Data...</div>
     <ul class="heroes">
       <li *ngFor="let hero of heroes" (click)="onSelect(hero)" [class.selected]="hero === currentHero">
         <span class="badge">{{hero.id}}</span> {{hero.name}}
