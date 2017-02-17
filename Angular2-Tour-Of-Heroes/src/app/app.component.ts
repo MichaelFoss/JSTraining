@@ -2,6 +2,9 @@ import { Component, OnInit } from '@angular/core';
 import { Hero } from './hero';
 import { HeroService } from './hero-service';
 
+// Mock how long it takes for the server to load the data
+const MOCK_LOAD_DELAY = 3000;
+
 @Component({
   selector: 'my-app',
   template: `
@@ -79,7 +82,7 @@ export class AppComponent implements OnInit {
   }
 
   getHeroes(): void {
-    this.heroService.getHeroes()
+    this.heroService.getHeroes(MOCK_LOAD_DELAY)
       .then(heroes => this.heroes = heroes);
   }
 
