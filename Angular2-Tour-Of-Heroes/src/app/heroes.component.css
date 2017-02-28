@@ -52,3 +52,11 @@
   text-align: center;
   width: 1.2em;
 }
+
+button.delete {
+  float:right;
+  margin-top: 2px;
+  margin-right: .8em;
+  background-color: gray !important;
+  color:white;
+}
