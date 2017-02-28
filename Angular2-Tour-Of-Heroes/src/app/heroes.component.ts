@@ -1,9 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Hero } from './hero';
 import { HeroService } from './hero-service';
-
-// Mock how long it takes for the server to load the data
-const MOCK_LOAD_DELAY = 3000;
+import { DELAY } from './mock-heroes';
 
 @Component({
   selector: 'heroes',
@@ -80,7 +78,7 @@ export class HeroesComponent implements OnInit {
   }
 
   getHeroes(): void {
-    this.heroService.getHeroes(MOCK_LOAD_DELAY)
+    this.heroService.getHeroes(DELAY)
       .then(heroes => this.heroes = heroes);
   }
 

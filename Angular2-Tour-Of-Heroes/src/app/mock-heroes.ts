@@ -12,3 +12,5 @@ export const HEROES: Hero[] = [
   { id: 9, name: 'Rogue' },
   { id: 10, name: 'Jean Grey' }
 ];
+
+export const DELAY: number = 2000;
