@@ -6,7 +6,8 @@ import { DELAY } from './mock-heroes';
 @Component({
   moduleId: module.id,
   selector: 'Dashboard',
-  templateUrl: 'dashboard.component.html'
+  templateUrl: 'dashboard.component.html',
+  styleUrls: [ 'dashboard.component.css' ]
 })
 
 export class DashboardComponent implements OnInit {
