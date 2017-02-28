@@ -35,4 +35,16 @@ export class HeroesComponent implements OnInit {
   onSelect(hero: Hero): void {
     this.currentHero = hero;
   };
+
+  add(name: string): void {
+    name = name.trim();
+    if (!name) {
+      return;
+    }
+    this.heroService.create(name)
+      .then(hero => {
+        this.heroes.push(hero);
+        this.currentHero = null;
+      })
+  }
 }
