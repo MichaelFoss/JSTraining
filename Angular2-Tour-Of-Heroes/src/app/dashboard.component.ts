@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { Hero } from './hero';
-import { DELAY } from './mock-heroes';
 import { HeroService } from './hero.service';
 
 @Component({
@@ -16,7 +15,7 @@ export class DashboardComponent implements OnInit {
   constructor(private heroService: HeroService) { }
 
   ngOnInit() {
-    this.heroService.getHeroes(DELAY)
+    this.heroService.getHeroes()
       .then(heroes => this.heroes = heroes.slice(1, 5));
   }
 }

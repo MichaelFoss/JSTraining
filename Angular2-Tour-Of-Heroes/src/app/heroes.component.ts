@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { Hero } from './hero';
-import { DELAY } from './mock-heroes';
 import { HeroService } from './hero.service';
 import { Router } from '@angular/router';
 
@@ -29,7 +28,7 @@ export class HeroesComponent implements OnInit {
   }
 
   getHeroes(): void {
-    this.heroService.getHeroes(DELAY)
+    this.heroService.getHeroes()
       .then(heroes => this.heroes = heroes);
   }
 

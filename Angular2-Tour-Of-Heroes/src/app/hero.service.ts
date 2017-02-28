@@ -9,7 +9,7 @@ export class HeroService {
     if (delay && Number.isInteger(delay)) {
       return new Promise<Hero[]>(resolve => {
         setTimeout(() => {
-          resolve(this.getHeroes(0));
+          resolve(this.getHeroes());
         }, delay);
       });
     }
@@ -20,7 +20,7 @@ export class HeroService {
   }
 
   getHero(id: number): Promise<Hero> {
-    return this.getHeroes(0)
+    return this.getHeroes()
       .then(heroes => heroes.find(hero => hero.id === id));
   }
 }
