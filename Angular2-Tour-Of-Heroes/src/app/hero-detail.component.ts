@@ -6,20 +6,9 @@ import { Location } from '@angular/common';
 import 'rxjs/add/operator/switchMap';
 
 @Component({
+  moduleId: module.id,
   selector: 'hero-detail',
-  template: `
-    <div *ngIf="currentHero">
-      <h2>{{currentHero.name}} Details</h2>
-      <div>
-        <label>id: </label>{{currentHero.id}}
-      </div>
-      <div>
-        <label>name: </label>
-        <input type="text" [(ngModel)]="currentHero.name" placeholder="Name" />
-      </div>
-    </div>
-    <button (click)="goBack()">Back</button>
-  `
+  templateUrl: 'hero-detail.component.html'
 })
 
 export class HeroDetailComponent implements OnInit {
