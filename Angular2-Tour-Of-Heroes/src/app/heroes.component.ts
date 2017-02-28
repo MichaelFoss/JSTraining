@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Hero } from './hero';
 import { HeroService } from './hero-service';
 import { DELAY } from './mock-heroes';
+import { Router } from '@angular/router';
 
 @Component({
   moduleId: module.id,
@@ -14,7 +15,14 @@ export class HeroesComponent implements OnInit {
   heroes: Hero[];
   currentHero: Hero;
 
-  constructor(private heroService: HeroService) { }
+  constructor(
+    private heroService: HeroService,
+    private router: Router
+  ) { }
+
+  gotoDetail(): void {
+    this.router.navigate([ '/detail', this.currentHero.id ]);
+  }
 
   ngOnInit(): void {
     this.getHeroes();

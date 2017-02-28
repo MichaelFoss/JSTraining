@@ -5,4 +5,7 @@
     <span class="badge">{{hero.id}}</span> {{hero.name}}
   </li>
 </ul>
-<hero-detail [currentHero]="currentHero"></hero-detail>
+<div *ngIf="currentHero">
+  <h2>{{currentHero.name | uppercase}}</h2>
+  <button (click)="gotoDetail()">View Details</button>
+</div>
