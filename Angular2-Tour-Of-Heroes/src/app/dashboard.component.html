@@ -1,0 +1,11 @@
+<h3>Top Heroes</h3>
+<div class="grid grid-pad">
+  <!-- @TODO We can't use !heroes here - why not? -->
+  <div *ngIf="heroes.length === 0">Loading Hero Data...</div>
+  <a *ngFor="let hero of heroes" [routerLink]="['/detail', hero.id]" class="col-1-4">
+    <div class="module hero">
+      <h4>{{hero.name}}</h4>
+    </div>
+  </a>
+</div>
+<hero-search></hero-search>
