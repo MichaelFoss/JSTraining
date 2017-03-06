@@ -1,4 +1,5 @@
 {
+  "extends": "tslint-config-valtech",
   "rulesDirectory": [
     "node_modules/codelyzer"
   ],
