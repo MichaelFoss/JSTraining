@@ -1,10 +1,10 @@
-// import 'babel-polyfill';
-import HelloWorld from './components/HelloWorld/HelloWorld';
+import 'babel-polyfill';
+import React from 'react';
+import ReactDOM from 'react-dom';
 
-// Get/create all nodes
-const body = document.querySelector('body');
-const helloWorld = new HelloWorld();
-const render = helloWorld.render();
+import App from './components/App/App.jsx';
 
-// Append the nodes
-body.innerHTML = render;
+ReactDOM.render(
+    React.createElement(App),
+    document.getElementById('app')
+);

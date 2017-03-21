@@ -23,13 +23,20 @@ module.exports = {
     module: {
         rules: [
             {
-                test: new RegExp(DIR_SRC + '/.js$'),
+                test: /\.js(x)?$/,
                 exclude: /node_modules/,
-                use: [
-                    'babel-loader',
+                loaders: [
                     'eslint-loader',
-                ]
-            }
+                ],
+                enforce: 'pre',
+            },
+            {
+                test: /\.js(x)?$/,
+                exclude: /node_modules/,
+                loaders: [
+                    'babel-loader',
+                ],
+            },
         ]
     },
     plugins: [

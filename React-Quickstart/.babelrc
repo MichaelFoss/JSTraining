@@ -1,6 +1,6 @@
 {
   "presets": [
-    ["es2015-webpack", { "modules": false }],
+    ["es2015", { "modules": false }],
     "react"
   ]
 }

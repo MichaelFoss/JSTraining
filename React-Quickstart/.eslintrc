@@ -1,10 +1,22 @@
 {
   "parser": "babel-eslint",
+  "parserOptions": {
+    "ecmaFeatures": {
+      "jsx": true
+    },
+    "sourceType": "module"
+  },
   "env": {
     // I write for browser
     "browser": true,
     // in CommonJS
     "node": true
   },
-  "extends": "valtech"
+  "extends": "valtech",
+  "plugins": [
+    "eslint-plugin-react"
+  ],
+  "rules": {
+    "react/jsx-uses-vars": [2]
+  }
 }
