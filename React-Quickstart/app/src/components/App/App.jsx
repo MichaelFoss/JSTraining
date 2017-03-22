@@ -8,7 +8,10 @@ class App extends React.Component {
 
     render() {
         return (
-            <HelloWorld message="Hello World" />
+            <div>
+                <p>React Quickstart</p>
+                <HelloWorld message="Hello World" />
+            </div>
         );
     }
 }

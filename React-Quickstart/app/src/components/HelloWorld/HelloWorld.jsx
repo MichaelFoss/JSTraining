@@ -7,9 +7,9 @@ class HelloWorld extends React.Component {
 
     render() {
         return (
-            <div>
+            <p>
                 {this.props.message}
-            </div>
+            </p>
         );
     }
 }
