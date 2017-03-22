@@ -1,6 +1,8 @@
 import HelloWorld from '../HelloWorld/HelloWorld.jsx';
 import React from 'react';
 
+import './App.scss';
+
 class App extends React.Component {
     constructor() {
         super();

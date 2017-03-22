@@ -22,6 +22,13 @@ module.exports = {
     },
     module: {
         rules: [
+            // CSS
+            {
+                test: /\.(scss|css)$/,
+                loaders: ['style-loader', 'css-loader', 'sass-loader']
+            },
+
+            // JS / JSX
             {
                 test: /\.js(x)?$/,
                 exclude: /node_modules/,

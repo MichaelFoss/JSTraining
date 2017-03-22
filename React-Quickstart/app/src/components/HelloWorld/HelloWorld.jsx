@@ -1,5 +1,7 @@
 import React from 'react';
 
+import './HelloWorld.scss';
+
 class HelloWorld extends React.Component {
     constructor() {
         super();
