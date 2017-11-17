@@ -6,18 +6,21 @@ export default class ListApp extends Component {
     super(props);
     this.state = {
       lastAdded: null,
-      items: []
+      items: [],
+        newItemName: ''
     };
   }
 
   _handleAddItem() {
     this.setState(previousState => {
+      const lastAdded = this.state.newItemName;
       return {
-        lastAdded: this.state.newItemName,
+        lastAdded,
         items: [
           ...previousState.items,
           { key: this.state.newItemName }
-        ]
+        ],
+        newItemName: ''
       };
     });
   }
@@ -37,6 +40,7 @@ export default class ListApp extends Component {
           style={styles.textInput}
           onChangeText={text => this.setState({ newItemName: text })}
           placeholder="Enter New Item"
+          value={this.state.newItemName}
         />
         <View
           style={styles.alignMiddle}
@@ -105,4 +109,3 @@ const styles = StyleSheet.create({
     height: 44,
   },
 });
-
