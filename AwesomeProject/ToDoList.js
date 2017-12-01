@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
-import { FlatList, View, TouchableOpacity, Text, TextInput, StyleSheet } from 'react-native';
+import { Button } from 'native-base';
+import { FlatList, View, Text, TextInput, StyleSheet } from 'react-native';
 
 export default class ToDoList extends Component {
     constructor(props) {
@@ -42,11 +43,9 @@ export default class ToDoList extends Component {
                     placeholder="Enter New Item"
                     value={this.state.newItemName}
                 />
-                <View
-                    style={styles.alignMiddle}
-                >
-                    <TouchableOpacity
-                        style={styles.button}
+                <View>
+                    <Button
+                        style={[styles.button, styles.alignMiddle]}
                         onPress={() => this._handleAddItem()}
                     >
                         <Text
@@ -54,7 +53,7 @@ export default class ToDoList extends Component {
                         >
                             Add
                         </Text>
-                    </TouchableOpacity>
+                    </Button>
                 </View>
                 <Text>List:</Text>
                 <FlatList
