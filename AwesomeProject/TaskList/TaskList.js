@@ -1,14 +1,20 @@
 import React, { Component } from 'react';
 import { Button } from 'native-base';
-import { FlatList, View, Text, TextInput, StyleSheet } from 'react-native';
+import { View, Text, TextInput, StyleSheet } from 'react-native';
+import { TaskTabs } from './TaskTabs.js';
+import { Tabs, Tab, Content, Container } from 'native-base';
 
-export default class ToDoList extends Component {
+export default class TaskList extends Component {
     constructor(props) {
         super(props);
         this.state = {
             lastAdded: null,
-            items: [],
-            newItemName: ''
+            newItemName: '',
+            tasks: [
+                [],
+                [],
+                []
+            ]
         };
     }
 
@@ -17,9 +23,14 @@ export default class ToDoList extends Component {
             const lastAdded = this.state.newItemName;
             return {
                 lastAdded,
-                items: [
-                    ...previousState.items,
-                    { key: this.state.newItemName }
+                tasks: [
+                    ...previousState.tasks,
+                    {
+                        key: {
+                            name: this.state.newItemName,
+                            number: this.state.tasks.length
+                        }
+                    }
                 ],
                 newItemName: ''
             };
@@ -27,8 +38,8 @@ export default class ToDoList extends Component {
     }
 
     render() {
-        console.log('Rendering all items: ', this.state.items);
-        return (
+        console.log('Rendering Task List. State: ', this.state);
+/*
             <View
                 style={styles.view}
             >
@@ -55,14 +66,31 @@ export default class ToDoList extends Component {
                         </Text>
                     </Button>
                 </View>
-                <Text>List:</Text>
-                <FlatList
-                    data={this.state.items}
-                    style={styles.list}
-                    renderItem={({item}) => <Text style={styles.listItem}>• {item.key}</Text>}
-                />
             </View>
+ */
+        return (
+            <Tabs initialPage={0}>
+                <Tab heading="Tab 1">
+                    <Content padder>
+                        <Text>
+                            Tab 1 contents.
+                        </Text>
+                    </Content>
+                </Tab>
+                <Tab heading="Tab 2">
+                    <Content padder>
+                        <Text>
+                            Tab 2 contents.
+                        </Text>
+                    </Content>
+                </Tab>
+            </Tabs>
         );
+        /*
+                <TaskTabs
+                    tasks={this.state.tasks}
+                />
+         */
     }
 }
 

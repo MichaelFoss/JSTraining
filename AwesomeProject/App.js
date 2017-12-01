@@ -1,12 +1,12 @@
 import React, { Component } from 'react';
 import { View } from 'react-native';
-import ToDoList from './ToDoList';
+import TaskList from './TaskList/TaskList.js';
 
 export default class App extends Component {
     render() {
         return (
             <View>
-                <ToDoList />
+                <TaskList />
             </View>
         );
     }
